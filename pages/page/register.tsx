@@ -2,6 +2,15 @@ import Image from "next/image";
 import loginImg from "../../img/Vector.png";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { requestAxios } from "@/config/requestAxios";
+import Link from "next/link";
+
+/* interface IRegister {
+  name: string | number;
+  username: string | number;
+  password: string | number;
+  email: string | number | any;
+} */
 
 export default function Register() {
   const CssTextField = styled(TextField)({
@@ -20,6 +29,47 @@ export default function Register() {
       },
     },
   });
+
+  const fetchData = (
+    name: string | number,
+    username: string | number,
+    email: string | number | any,
+    password: string | number,
+  ) => {
+    requestAxios
+      .post("/users/register", {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
+      })
+      .then((data) => {
+        console.log(data.data);
+
+        if (data.data.success) {
+          let token = data.data.token;
+          localStorage.setItem("tokencha", JSON.stringify(token));
+          alert(data.data.message);
+          window.location.replace("/");
+        } else {
+          alert(data.data.message);
+        }
+      })
+      .catch((err) => {
+        alert(err.response.data.message);
+      });
+  };
+
+  function handlerSubmit(e: React.FormEvent<HTMLFormElement> | any) {
+    e.preventDefault();
+    fetchData(
+      e.target[0].value,
+      e.target[2].value,
+      e.target[4].value,
+      e.target[6].value
+    );
+  }
+
   return (
     <div className="container">
       <div className="login d-flex">
@@ -42,10 +92,10 @@ export default function Register() {
             <div className="d-flex login-sign-bnts">
               <h3>LOGIN</h3>
               <div className="login_line"></div>
-              <h3>SIGN UP</h3>
+              <h3 className="active_btn">SIGN UP</h3>
             </div>
 
-            <form>
+            <form onSubmit={handlerSubmit}>
               <div className="boxspan">
                 <CssTextField
                   className="input"
@@ -53,7 +103,7 @@ export default function Register() {
                   autoComplete="off"
                   color="primary"
                   id="1"
-                  label="enter your username"
+                  label="enter your name"
                   variant="outlined"
                   InputLabelProps={{
                     style: { fontFamily: "nunito", color: "white" },
@@ -72,7 +122,7 @@ export default function Register() {
                   autoComplete="off"
                   color="primary"
                   id="2"
-                  label="enter your name"
+                  label="enter your username"
                   variant="outlined"
                   InputLabelProps={{
                     style: { fontFamily: "nunito", color: "white" },
@@ -122,11 +172,14 @@ export default function Register() {
                 />
               </div>
               <div className="btn_block">
-                <button className="btn" type="submit">
-                  SIGN UP
+                <button className="btn register_btn" type="submit">
+                  LOGIN
                 </button>
+
                 <div className="btn2_block">
-                  <button className="btn2">have an account</button>
+                  <Link href={"/page/login"}>
+                    <button className="btn2">register again</button>{" "}
+                  </Link>
                   <div></div>
                 </div>
               </div>

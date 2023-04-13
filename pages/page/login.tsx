@@ -1,9 +1,13 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import loginImg from "../../img/Vector.png";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { requestAxios } from "@/config/requestAxios";
+import Link from "next/link";
 
 export default function Login() {
+  const [data, setData]: any = useState(null);
   const CssTextField = styled(TextField)({
     "& label.Mui-focused": {
       color: "white",
@@ -20,6 +24,33 @@ export default function Login() {
       },
     },
   });
+
+  const fetchData = (username: string | number, password: string | number) => {
+    requestAxios
+      .post("/login", {
+        username: username,
+        password: password,
+      })
+      .then((data) => {
+        console.log(data.data);
+
+        if (data.data.success) {
+          let token = data.data.token;
+          localStorage.setItem("tokencha", JSON.stringify(token));
+          alert(data.data.message);
+          window.location.replace("/");
+        } else {
+          alert(data.data.message);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  function handlerSubmit(e: React.FormEvent<HTMLFormElement> | any) {
+    e.preventDefault();
+    fetchData(e.target[0].value, e.target[2].value);
+  }
+
   return (
     <div className="container">
       <div className="login d-flex">
@@ -40,12 +71,12 @@ export default function Login() {
 
           <div>
             <div className="d-flex login-sign-bnts">
-              <h3>LOGIN</h3>
+              <h3 className="active_btn">LOGIN</h3>
               <div className="login_line"></div>
               <h3>SIGN UP</h3>
             </div>
 
-            <form>
+            <form onSubmit={handlerSubmit}>
               <div className="boxspan">
                 <CssTextField
                   className="input"
@@ -88,7 +119,7 @@ export default function Login() {
                   SIGN UP
                 </button>
                 <div className="btn2_block">
-                  <button className="btn2">have an account</button>
+                  <Link href={'/page/register'}><button className="btn2">have an account</button></Link>
                   <div></div>
                 </div>
               </div>

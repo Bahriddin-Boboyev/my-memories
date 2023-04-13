@@ -36,25 +36,30 @@ export default function Main() {
               <Image src={icon3} alt="icon" />
             </button>
           </div>
-          <div className="main_like-block">
-            <button className="main_like">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<FavoriteBorderRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
-            <button className="main_dislike">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<HeartBrokenRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
+          <div className="d-flex date_items_block">
+            <div className="main_like-block">
+              <button className="main_like">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<FavoriteIcon />}
+                  />
+                </div>
+              </button>
+              <button className="main_dislike">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<HeartBrokenRoundedIcon />}
+                  />
+                </div>
+              </button>
+            </div>
+            <div className="main_items_date">
+              <p>01/01/2023</p>
+            </div>
           </div>
         </li>
         <li className="item">
@@ -79,25 +84,30 @@ export default function Main() {
               <Image src={icon3} alt="icon" />
             </button>
           </div>
-          <div className="main_like-block">
-            <button className="main_like">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<FavoriteBorderRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
-            <button className="main_dislike">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<HeartBrokenRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
+          <div className="d-flex date_items_block">
+            <div className="main_like-block">
+              <button className="main_like">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<FavoriteIcon />}
+                  />
+                </div>
+              </button>
+              <button className="main_dislike">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<HeartBrokenRoundedIcon />}
+                  />
+                </div>
+              </button>
+            </div>
+            <div className="main_items_date">
+              <p>01/01/2023</p>
+            </div>
           </div>
         </li>
         <li className="item">
@@ -122,25 +132,30 @@ export default function Main() {
               <Image src={icon3} alt="icon" />
             </button>
           </div>
-          <div className="main_like-block">
-            <button className="main_like">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<FavoriteBorderRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
-            <button className="main_dislike">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<HeartBrokenRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
+          <div className="d-flex date_items_block">
+            <div className="main_like-block">
+              <button className="main_like">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<FavoriteIcon />}
+                  />
+                </div>
+              </button>
+              <button className="main_dislike">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<HeartBrokenRoundedIcon />}
+                  />
+                </div>
+              </button>
+            </div>
+            <div className="main_items_date">
+              <p>01/01/2023</p>
+            </div>
           </div>
         </li>
         <li className="item">
@@ -165,25 +180,30 @@ export default function Main() {
               <Image src={icon3} alt="icon" />
             </button>
           </div>
-          <div className="main_like-block">
-            <button className="main_like">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<FavoriteBorderRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
-            <button className="main_dislike">
-              <div>
-                <Checkbox
-                  {...label}
-                  icon={<HeartBrokenRoundedIcon />}
-                  checkedIcon={<FavoriteIcon />}
-                />
-              </div>
-            </button>
+          <div className="d-flex date_items_block">
+            <div className="main_like-block">
+              <button className="main_like">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<FavoriteIcon />}
+                  />
+                </div>
+              </button>
+              <button className="main_dislike">
+                <div>
+                  <Checkbox
+                    {...label}
+                    icon={<FavoriteBorderRoundedIcon />}
+                    checkedIcon={<HeartBrokenRoundedIcon />}
+                  />
+                </div>
+              </button>
+            </div>
+            <div className="main_items_date">
+              <p>01/01/2023</p>
+            </div>
           </div>
         </li>
       </ul>

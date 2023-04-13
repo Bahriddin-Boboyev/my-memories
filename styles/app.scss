@@ -110,6 +110,7 @@
   background-color: transparent;
   color: #12a7fb;
   transition: ease 0.5s;
+  cursor: pointer;
 }
 .btn2 {
   width: 173px;
@@ -122,6 +123,7 @@
   color: #12a7fb;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .btn2_block {
   margin-left: 46px;
@@ -172,6 +174,7 @@
   color: #12a7fb;
   background: rgba(48, 33, 33, 0.9);
   margin-right: 3%;
+  cursor: pointer;
 }
 
 .login_form {
@@ -221,7 +224,7 @@
     background: transparent;
     text-transform: uppercase;
     margin-left: 22px;
-    margin-bottom: 147px;
+    margin-bottom: 22px;
   }
 }
 .sidebar_icon_block {
@@ -229,6 +232,7 @@
   width: 200px;
   height: 39px;
   margin-bottom: 15px;
+  margin-top: 140px;
 
   button {
     cursor: pointer;
@@ -566,4 +570,46 @@
 }
 .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   color: #00b4d8 !important;
+}
+.date_items_block{
+  width: 324px;
+}
+.main_items_date {
+  p{
+    
+    width: 79px;
+    height: 34px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #f8f8f8;
+  }
+}
+
+/* ---------------- */
+
+.sidebar_input_block{
+  .inputSidebar{
+    margin-left: 29px;
+    margin-bottom: 15px;
+  }
+}
+.sidebar_button{
+  margin-top: 10px;
+  margin-left: 29px;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.sidebar_btn2{
+  margin-left: 29px;
+  color: #ffffff;
+}
+.active_btn{
+  color: #12A7FB !important;
+}
+
+.none{
+  display: none;
 }

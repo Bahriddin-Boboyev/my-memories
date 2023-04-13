@@ -32,7 +32,12 @@ export default function Navbar() {
     color: "#ffffff",
     textTransform: "capitalize",
   };
-
+  function logout() {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("tokencha");
+    }
+    window.location.replace('/page/login')
+  }
   return (
     <div className="container">
       <div className="navbar d-flex">
@@ -56,7 +61,9 @@ export default function Navbar() {
             <Image src={glas} alt="img" />
           </button>
         </form>
-        <button className="navbar_btn">LOGOUT</button>
+        <button className="navbar_btn" onClick={logout}>
+          LOGOUT
+        </button>
       </div>
     </div>
   );
