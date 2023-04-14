@@ -60,6 +60,7 @@ export default function Sidebar() {
       .catch((err) => alert(err));
   };
 
+
   const handlerSubmit = (e: React.FormEvent<HTMLFormElement> | any) => {
     e.preventDefault();
     fetchData(e.target[1].value, e.target[3].value, load);
@@ -115,6 +116,7 @@ export default function Sidebar() {
           <CssTextField
             className="inputSidebar"
             color="primary"
+            required
             id="1"
             label="title"
             variant="outlined"

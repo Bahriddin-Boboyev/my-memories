@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import Image from "next/image";
 import loginImg from "../../img/Vector.png";
 import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { requestAxios } from "@/config/requestAxios";
 import Link from "next/link";
+
 
 export default function Login() {
   const [data, setData]: any = useState(null);
@@ -49,7 +50,9 @@ export default function Login() {
   function handlerSubmit(e: React.FormEvent<HTMLFormElement> | any) {
     e.preventDefault();
     fetchData(e.target[0].value, e.target[2].value);
+    
   }
+  
 
   return (
     <div className="container">
@@ -119,7 +122,9 @@ export default function Login() {
                   SIGN UP
                 </button>
                 <div className="btn2_block">
-                  <Link href={'/page/register'}><button className="btn2">have an account</button></Link>
+                  <Link href={"/page/register"}>
+                    <button className="btn2">have an account</button>
+                  </Link>
                   <div></div>
                 </div>
               </div>
